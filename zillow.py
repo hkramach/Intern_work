@@ -4,6 +4,7 @@ import urllib2
 api_key="ZILLOW API KEY" 
 #This has to be the actual zillow API key for displaying the correct results.
 #Modify the code for the key, otherwise only None will display.
+#In order to run this correctly addresslist.txt must be in the same directory.
 
 def address_data(address, city):
   adr = address.replace(' ', '+')
