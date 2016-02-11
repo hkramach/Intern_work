@@ -1,0 +1,68 @@
+//Hemant Ramachandran
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prices</title><meta charset="utf-8">
+  <style>
+  body,div { background-color: #eee; font-family: sans; padding: 1em; }
+  .d6{
+    font-size: 100px;}
+  </style>
+</head>
+<body>
+  <form action="#">
+    <input type="text" id="from" />
+    <select id="from"
+       <option value="None">-- Select --</option>
+       <option value="c">Product1</option>
+       <option value="f">Product2</option>
+       <option value="k">Product3</option>
+    </select>
+    =
+    <input type="text"  id="toUnit" />
+    <select id="toUnit"
+       <option value="None">-- Select --</option>
+       <option value="c">Price1</option>
+       <option value="f">Price2</option>
+       <option value="k">Price3</option>
+    </select>
+  </form>
+  </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+  </script>
+  <script>
+    $(function() {
+        $('select#toUnit').on('change', function() {
+          var input = parseInt($("#from").val(), 10);
+          var src = $('select#from').val();
+          if (src.indexOf('c') >= 0) {
+            var option = $(this).val();
+            if (option.indexOf('c')>=0)
+              $("#toUnit").val(Math.round(input*110));
+            if (option.indexOf('f') >= 0)
+              $("#toUnit").val(Math.round(input * 100));
+            if (option.indexOf('k') >= 0)
+              $("#toUnit").val(Math.round(input * 90)); 
+          } else if (src.indexOf('f') >= 0) {
+            var option = $(this).val();
+            if (option.indexOf('c') >= 0)
+              $("#toUnit").val(Math.round(input*20));
+            if (option.indexOf('f') >= 0)
+              $("#toUnit").val(Math.round(input*30));
+            if (option.indexOf('k') >= 0)
+              $("#toUnit").val(Math.round(input*39.32));
+          } else if (src.indexOf('k') >= 0) {
+            var option = $(this).val();
+            if (option.indexOf('c') >= 0)
+              $("#toUnit").val(Math.round(input*50.21));
+            if (option.indexOf('f') >= 0)
+              $("#toUnit").val(Math.round(input*60.71));
+            if (option.indexOf('k') >= 0)
+              $("#toUnit").val(Math.round(input*40));
+          }
+        });
+    });
+    </script>
+    </body>
+    </html>
